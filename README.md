@@ -14,6 +14,7 @@ Le cadre est prévu pour 20 à 30 leçons.
 | 1 | Le Roudi (check-back Stayman) | `lecons/01-roudi.js` |
 | 2 | Le Puppet Stayman | `lecons/02-puppet.js` |
 | 3 | Le Drury | `lecons/03-drury.js` |
+| 4 | Le contre Spoutnik | `lecons/04-spoutnik.js` |
 
 ## Ajouter une leçon
 
@@ -39,6 +40,13 @@ est signalée dans la console.
      alt:"Autre lecture, facultatif."}
 
 `seq` commence toujours par l'ouvreur et se termine par `"?"`.
+
+Quand les enchères adverses comptent, la leçon déclare une troisième colonne :
+
+    colonnes: ["Ouvreur", "Adversaire", "Répondant"]
+
+`seq` se lit alors par groupes de trois, et la colonne du milieu s'affiche en
+retrait. Sans cette clé, le diagramme reste à deux colonnes.
 `role` vaut `"Ouvreur"` ou `"Répondant"`. `h` est vérifié par le générateur.
 
 ## Mise en ligne
@@ -53,6 +61,7 @@ téléverser.
     lecon-01-roudi.html
     lecon-02-puppet.html
     lecon-03-drury.html
+    lecon-04-spoutnik.html
     manifest.webmanifest
     sw.js
     icon-180.png  icon-192.png  icon-512.png
@@ -67,7 +76,7 @@ pas, les oublier non plus.
 ### Si la page s'affiche sans mise en forme
 
 C'est le signe que la page cherche un fichier absent. Avec des pages autonomes
-cela ne devrait plus arriver ; le cas échéant, vérifier que les neuf fichiers
+cela ne devrait plus arriver ; le cas échéant, vérifier que les dix fichiers
 ci-dessus sont bien à la racine, et non dans un sous-dossier créé par le
 téléversement.
 

@@ -334,6 +334,17 @@ body.accueil header.top h1 .num{color:var(--brass)}
 }
 .aide-install strong{color:var(--brass)}
 
+/* ---------- diagramme à trois colonnes (enchères adverses) ---------- */
+.encheres.trois{min-width:250px}
+.encheres.trois .entete,.encheres.trois .ligne{grid-template-columns:1fr 1fr 1fr}
+.encheres.trois .entete span{padding:5px 6px;font-size:9.5px}
+.encheres.trois .ligne span{padding:6px 6px;font-size:15px}
+.encheres .adv{color:var(--ink-soft);font-style:italic}
+@media (max-width:560px){
+  .encheres.trois .entete span{font-size:8.5px;letter-spacing:.04em;padding:4px 2px}
+  .encheres.trois .ligne span{font-size:14px;padding:6px 2px}
+}
+
 </style>
 </head>
 <body>

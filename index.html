@@ -334,6 +334,17 @@ body.accueil header.top h1 .num{color:var(--brass)}
 }
 .aide-install strong{color:var(--brass)}
 
+/* ---------- diagramme à trois colonnes (enchères adverses) ---------- */
+.encheres.trois{min-width:250px}
+.encheres.trois .entete,.encheres.trois .ligne{grid-template-columns:1fr 1fr 1fr}
+.encheres.trois .entete span{padding:5px 6px;font-size:9.5px}
+.encheres.trois .ligne span{padding:6px 6px;font-size:15px}
+.encheres .adv{color:var(--ink-soft);font-style:italic}
+@media (max-width:560px){
+  .encheres.trois .entete span{font-size:8.5px;letter-spacing:.04em;padding:4px 2px}
+  .encheres.trois .ligne span{font-size:14px;padding:6px 2px}
+}
+
 </style>
 </head>
 <body class="accueil">
@@ -372,6 +383,12 @@ body.accueil header.top h1 .num{color:var(--brass)}
         <span class="resume-lecon">2♣ par une main ayant passé, après une ouverture majeure en troisième ou quatrième position : soutien et 10-12 H, sans dépasser le palier de 2 si l'ouverture était légère.</span>
         <span class="note-lecon" hidden></span>
       </a>
+      <a class="carte-lecon" href="lecon-04-spoutnik.html" data-lecon="04-spoutnik">
+        <span class="numero">Leçon 4</span>
+        <span class="titre-lecon">Le contre Spoutnik</span>
+        <span class="resume-lecon">Le contre du répondant après une intervention n'est plus punitif : il montre les couleurs non annoncées, majeures d'abord, avec une force croissante selon le palier.</span>
+        <span class="note-lecon" hidden></span>
+      </a>
   </section>
 
   <section class="sommaire">
@@ -381,11 +398,11 @@ body.accueil header.top h1 .num{color:var(--brass)}
       <span class="carte-lecon future"><span class="numero">À venir</span>
         <span class="titre-lecon">Le Blackwood 5 clés</span></span>
       <span class="carte-lecon future"><span class="numero">À venir</span>
-        <span class="titre-lecon">Le contre Spoutnik</span></span>
-      <span class="carte-lecon future"><span class="numero">À venir</span>
         <span class="titre-lecon">La quatrième couleur forcing</span></span>
       <span class="carte-lecon future"><span class="numero">À venir</span>
         <span class="titre-lecon">Le Michaels et l'Unusual 2SA</span></span>
+      <span class="carte-lecon future"><span class="numero">À venir</span>
+        <span class="titre-lecon">Le Landy et les interventions sur 1SA</span></span>
   </section>
 
   <p class="mention">Les notes des quiz sont conservées sur cet appareil seul. Chaque leçon
