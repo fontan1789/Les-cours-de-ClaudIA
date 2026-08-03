@@ -13,6 +13,7 @@ Le cadre est prévu pour 20 à 30 leçons.
 |----|-------|--------------------|
 | 1 | Le Roudi (check-back Stayman) | `lecons/01-roudi.js` |
 | 2 | Le Puppet Stayman | `lecons/02-puppet.js` |
+| 3 | Le Drury | `lecons/03-drury.js` |
 
 ## Ajouter une leçon
 
@@ -51,6 +52,7 @@ téléverser.
     index.html
     lecon-01-roudi.html
     lecon-02-puppet.html
+    lecon-03-drury.html
     manifest.webmanifest
     sw.js
     icon-180.png  icon-192.png  icon-512.png
@@ -65,7 +67,7 @@ pas, les oublier non plus.
 ### Si la page s'affiche sans mise en forme
 
 C'est le signe que la page cherche un fichier absent. Avec des pages autonomes
-cela ne devrait plus arriver ; le cas échéant, vérifier que les huit fichiers
+cela ne devrait plus arriver ; le cas échéant, vérifier que les neuf fichiers
 ci-dessus sont bien à la racine, et non dans un sous-dossier créé par le
 téléversement.
 
