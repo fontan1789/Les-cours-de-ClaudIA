@@ -8,6 +8,33 @@ const path = require("path");
 const RACINE = path.join(__dirname, "..");
 const DOSSIER_LECONS = path.join(RACINE, "lecons");
 
+/* Les pages publiées sont autonomes : styles et moteur y sont recopiés.
+   Le dépôt ne contient ainsi que des fichiers à plat, sans sous-dossier à
+   téléverser — c'est la source d'erreur la plus fréquente sur GitHub Pages. */
+const CSS = fs.readFileSync(path.join(RACINE, "assets/gadget.css"), "utf8");
+const MOTEUR = fs.readFileSync(path.join(RACINE, "assets/gadget.js"), "utf8");
+const ACCUEIL_JS = fs.readFileSync(path.join(RACINE, "assets/accueil.js"), "utf8");
+
+/* Installation sur l'écran d'accueil + fonctionnement hors ligne.
+   Le bouton reste visible même quand Chrome ne propose pas l'invite :
+   il affiche alors la marche à suivre au lieu de ne rien faire. */
+const INSTALL = `
+let inviteInstall = null;
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); inviteInstall = e; });
+function installer(){
+  if(inviteInstall){ inviteInstall.prompt(); inviteInstall = null; return; }
+  const z = document.getElementById("aide-install");
+  if(z) z.hidden = !z.hidden;
+}
+if("serviceWorker" in navigator && location.protocol.indexOf("http") === 0){
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+`;
+const AIDE_INSTALL = `    <div id="aide-install" class="aide-install" hidden>
+      <strong>Android</strong> — menu ⋮ de Chrome, puis « Ajouter à l'écran d'accueil ».<br>
+      <strong>iPhone</strong> — bouton Partager de Safari, puis « Sur l'écran d'accueil ».
+    </div>`;
+
 /* ---------- petits utilitaires ---------- */
 const COULEUR = {"♠":"n","♥":"r","♦":"r","♣":"n"};
 const col = t => String(t).replace(/[♠♥♦♣]/g, s => '<b class="'+COULEUR[s]+'">'+s+'</b>');
@@ -76,7 +103,9 @@ function pageLecon(l){
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-192.png">
-<link rel="stylesheet" href="assets/gadget.css">
+<style>
+${CSS}
+</style>
 </head>
 <body>
 
@@ -89,7 +118,8 @@ function pageLecon(l){
     <p class="serie"><a class="retour" href="index.html">‹ Les enchères gadget</a></p>
     <h1><span class="num">Leçon ${l.numero}.</span> ${l.titre}</h1>
     <p class="soustitre">${l.sousTitre}</p>
-    <button id="installer" class="installer" hidden onclick="installer()">Installer l'application</button>
+    <button id="installer" class="installer" onclick="installer()">Installer l'application</button>
+${AIDE_INSTALL}
   </div>
 </header>
 
@@ -137,7 +167,10 @@ window.LECON = {
   banque: ${JSON.stringify(l.banque)}
 };
 </script>
-<script src="assets/gadget.js"></script>
+<script>
+${MOTEUR}
+${INSTALL}
+</script>
 </body>
 </html>
 `;
@@ -167,7 +200,9 @@ function pageAccueil(lecons, aVenir){
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-192.png">
-<link rel="stylesheet" href="assets/gadget.css">
+<style>
+${CSS}
+</style>
 </head>
 <body class="accueil">
 
@@ -176,7 +211,8 @@ function pageAccueil(lecons, aVenir){
     <p class="serie">Série ClaudIA</p>
     <h1>Les enchères <span class="num">gadget</span></h1>
     <p class="soustitre">Une convention par leçon : le cours en deux pages, 25 donnes, un quiz de cinq.</p>
-    <button id="installer" class="installer" hidden onclick="installer()">Installer l'application</button>
+    <button id="installer" class="installer" onclick="installer()">Installer l'application</button>
+${AIDE_INSTALL}
   </div>
 </header>
 
@@ -195,21 +231,9 @@ ${suite}
   s'imprime sur deux pages depuis l'onglet « Leçon ».</p>
 </div>
 
-<script src="assets/accueil.js"></script>
 <script>
-let inviteInstall = null;
-window.addEventListener("beforeinstallprompt", e => {
-  e.preventDefault(); inviteInstall = e;
-  const b = document.getElementById("installer"); if(b) b.hidden = false;
-});
-function installer(){
-  if(!inviteInstall) return;
-  inviteInstall.prompt(); inviteInstall = null;
-  const b = document.getElementById("installer"); if(b) b.hidden = true;
-}
-if("serviceWorker" in navigator && location.protocol.indexOf("http") === 0){
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
-}
+${ACCUEIL_JS}
+${INSTALL}
 </script>
 </body>
 </html>
@@ -269,8 +293,8 @@ lecons.sort((a,b) => a.numero - b.numero);
 fs.writeFileSync(path.join(RACINE, "index.html"), pageAccueil(lecons, A_VENIR));
 console.log("  ✓ index.html (" + lecons.length + " leçons)");
 
-const actifs = ["index.html", "assets/gadget.css", "assets/gadget.js", "assets/accueil.js",
-                "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png"]
+const actifs = ["index.html", "manifest.webmanifest",
+                "icon-180.png", "icon-192.png", "icon-512.png"]
                 .concat(lecons.map(l => l.fichier));
 fs.writeFileSync(path.join(RACINE, "sw.js"), serviceWorker(actifs, lecons.length));
 console.log("  ✓ sw.js (cache gadget-v" + lecons.length + ")");

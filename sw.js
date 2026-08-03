@@ -3,9 +3,6 @@ const CACHE = "gadget-v2";
 const FICHIERS = [
   "./",
   "index.html",
-  "assets/gadget.css",
-  "assets/gadget.js",
-  "assets/accueil.js",
   "manifest.webmanifest",
   "icon-180.png",
   "icon-192.png",

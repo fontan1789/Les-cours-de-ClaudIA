@@ -42,33 +42,32 @@ est signalée dans la console.
 
 ## Mise en ligne
 
-Déposer à la racine d'un dépôt GitHub, puis *Settings → Pages*, branche `main`,
-dossier `/ (root)`. Les dossiers `lecons/` et `outils/` peuvent rester dans le
-dépôt : ils ne servent qu'à la génération.
+Les pages publiées sont **autonomes** : styles et moteur y sont recopiés par le
+générateur. Le dépôt ne contient que des fichiers à plat, sans sous-dossier à
+téléverser.
 
-À publier :
+À déposer à la racine du dépôt, et rien d'autre :
 
     index.html
     lecon-01-roudi.html
     lecon-02-puppet.html
-    assets/gadget.css
-    assets/gadget.js
-    assets/accueil.js
     manifest.webmanifest
     sw.js
     icon-180.png  icon-192.png  icon-512.png
 
-## Sur téléphone
+Puis *Settings → Pages*, source **Deploy from a branch**, branche `main`,
+dossier `/ (root)`.
 
-Ouvrir l'adresse dans Chrome, puis le bouton « Installer l'application », ou
-le menu ⋮ → *Ajouter à l'écran d'accueil*. L'application fonctionne ensuite
-hors ligne.
+Les dossiers `assets/`, `lecons/` et `outils/` sont les **sources** : le
+générateur s'en sert, le site publié n'en dépend pas. Les téléverser ne gêne
+pas, les oublier non plus.
 
-Un fichier `.html` simplement téléchargé sur Android ne fonctionne pas : le
-lecteur de fichiers du système n'exécute pas le JavaScript. Les leçons et les
-donnes restent lisibles dans ce cas — elles sont écrites en dur dans les pages
-et la navigation par onglets est en CSS pur — mais le quiz, lui, a besoin du
-JavaScript.
+### Si la page s'affiche sans mise en forme
+
+C'est le signe que la page cherche un fichier absent. Avec des pages autonomes
+cela ne devrait plus arriver ; le cas échéant, vérifier que les huit fichiers
+ci-dessus sont bien à la racine, et non dans un sous-dossier créé par le
+téléversement.
 
 ## Données
 
