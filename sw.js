@@ -1,5 +1,5 @@
 /* Les enchères gadget — fonctionnement hors ligne. Fichier généré par outils/construire.js */
-const CACHE = "gadget-v4";
+const CACHE = "gadget-v5.2";
 const FICHIERS = [
   "./",
   "index.html",
@@ -7,10 +7,12 @@ const FICHIERS = [
   "icon-180.png",
   "icon-192.png",
   "icon-512.png",
+  "icon-512-maskable.png",
   "lecon-01-roudi.html",
   "lecon-02-puppet.html",
   "lecon-03-drury.html",
-  "lecon-04-spoutnik.html"
+  "lecon-04-spoutnik.html",
+  "lecon-05-landy.html"
 ];
 
 self.addEventListener("install", e => {
