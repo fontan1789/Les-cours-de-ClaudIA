@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17492f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Les enchères gadget · Série ClaudIA</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="assets/gadget.css">
+</head>
+<body class="accueil">
+
+<header class="top">
+  <div class="wrap">
+    <p class="serie">Série ClaudIA</p>
+    <h1>Les enchères <span class="num">gadget</span></h1>
+    <p class="soustitre">Une convention par leçon : le cours en deux pages, 25 donnes, un quiz de cinq.</p>
+    <button id="installer" class="installer" hidden onclick="installer()">Installer l'application</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="sommaire">
+    <h2>Leçons disponibles</h2>
+      <a class="carte-lecon" href="lecon-01-roudi.html" data-lecon="01-roudi">
+        <span class="numero">Leçon 1</span>
+        <span class="titre-lecon">Le Roudi</span>
+        <span class="resume-lecon">2♣ artificiel et forcing sur la redemande de 1SA, à partir de 11 H, pour retrouver le soutien à trois cartes ou la seconde majeure quatrième.</span>
+        <span class="note-lecon" hidden></span>
+      </a>
+      <a class="carte-lecon" href="lecon-02-puppet.html" data-lecon="02-puppet">
+        <span class="numero">Leçon 2</span>
+        <span class="titre-lecon">Le Puppet Stayman</span>
+        <span class="resume-lecon">3♣ sur l'ouverture de 2SA : l'ouvreur annonce d'abord sa majeure cinquième, ensuite seulement ses quatrièmes.</span>
+        <span class="note-lecon" hidden></span>
+      </a>
+  </section>
+
+  <section class="sommaire">
+    <h2>Prochaines leçons</h2>
+      <span class="carte-lecon future"><span class="numero">À venir</span>
+        <span class="titre-lecon">Le Texas et les transferts</span></span>
+      <span class="carte-lecon future"><span class="numero">À venir</span>
+        <span class="titre-lecon">Le Blackwood 5 clés</span></span>
+      <span class="carte-lecon future"><span class="numero">À venir</span>
+        <span class="titre-lecon">Le contre Spoutnik</span></span>
+      <span class="carte-lecon future"><span class="numero">À venir</span>
+        <span class="titre-lecon">Le Drury</span></span>
+      <span class="carte-lecon future"><span class="numero">À venir</span>
+        <span class="titre-lecon">La quatrième couleur forcing</span></span>
+  </section>
+
+  <p class="mention">Les notes des quiz sont conservées sur cet appareil seul. Chaque leçon
+  s'imprime sur deux pages depuis l'onglet « Leçon ».</p>
+</div>
+
+<script src="assets/accueil.js"></script>
+<script>
+let inviteInstall = null;
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault(); inviteInstall = e;
+  const b = document.getElementById("installer"); if(b) b.hidden = false;
+});
+function installer(){
+  if(!inviteInstall) return;
+  inviteInstall.prompt(); inviteInstall = null;
+  const b = document.getElementById("installer"); if(b) b.hidden = true;
+}
+if("serviceWorker" in navigator && location.protocol.indexOf("http") === 0){
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>

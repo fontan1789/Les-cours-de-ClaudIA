@@ -1,0 +1,253 @@
+/* Leçon 2 — Le Puppet Stayman */
+module.exports = {
+  id: "02-puppet",
+  numero: 2,
+  titre: "Le Puppet Stayman",
+  sousTitre: "Trouver aussi le fit 5-3 après l'ouverture de 2SA",
+  resume: "3♣ sur l'ouverture de 2SA : l'ouvreur annonce d'abord sa majeure cinquième, ensuite seulement ses quatrièmes.",
+  etat: "prête",
+
+  cours: `
+    <div class="page">
+      <p class="titre-impression">Les enchères gadget — Leçon 2 : le Puppet Stayman</p>
+      <p class="sous-impression">Page 1 / 2 — le principe et les réponses de l'ouvreur</p>
+
+      <p class="chapo">Le Stayman ordinaire cherche un fit 4-4. Le Puppet Stayman cherche d'abord un fit 5-3, parce que l'ouvreur de 2SA peut parfaitement détenir une majeure cinquième que rien, jusque-là, ne lui permettait d'annoncer.</p>
+
+      <h2>Le problème</h2>
+      <p>Une ouverture de 2SA montre 20-21 H et une main régulière. Régulière ne veut pas dire sans majeure cinquième : avec ♠ A R 10 8 5 ♥ R 7 ♦ A D 4 ♣ R V 6, l'ouverture de 2SA est le moindre mal, et beaucoup de joueurs la choisissent.</p>
+      <div class="encadre">
+        ⚠️ Ouvrir de 2SA avec une majeure cinquième ne relève pas du SEF strict, mais d'un usage courant. C'est précisément cet usage qui rend le Puppet utile : il n'a d'intérêt que si la main d'en face peut cacher cinq cartes à Pique ou à Cœur.
+      </div>
+      <p>Le répondant qui détient trois cartes à Pique et quatre à Cœur n'a alors aucun moyen de le savoir : un Stayman ordinaire lui ferait chercher un fit 4-4 à Cœur et manquer le fit 5-3 à Pique.</p>
+
+      <h2>Le principe</h2>
+      <div class="encadre">
+        <strong>3♣ est artificiel et forcing de manche.</strong> Il demande d'abord <strong>as-tu une majeure cinquième ?</strong>, et seulement ensuite <strong>as-tu une majeure quatrième ?</strong> Il exige des valeurs de manche et, sauf à chercher le chelem, au moins une majeure quatrième.
+      </div>
+      <div class="duo">
+        <div class="encheres" aria-label="Séquence 2 Sans-Atout, 3 Trèfle">
+          <div class="entete"><span>Ouvreur</span><span>Répondant</span></div>
+          <div class="ligne"><span>2SA</span><span class="attente">3<b class="n">♣</b></span></div>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <p style="margin-top:0">Le nom vient de là : le répondant tire les ficelles, l'ouvreur décrit sa main dans un ordre imposé. C'est lui, la main forte, qui finira déclarant.</p>
+        </div>
+      </div>
+
+      <h2>Les réponses de l'ouvreur</h2>
+      <table class="reponses">
+        <tr><th>Enchère</th><th>Signification</th></tr>
+        <tr><td>3♦</td><td>Pas de majeure cinquième, mais au moins une majeure quatrième. C'est une enchère d'attente, elle ne dit rien des Carreaux.</td></tr>
+        <tr><td>3♥ ou 3♠</td><td>Cinq cartes dans cette majeure.</td></tr>
+        <tr><td>3SA</td><td>Ni majeure cinquième, ni majeure quatrième. La question est close.</td></tr>
+      </table>
+
+      <h2>Quand demander, quand s'abstenir</h2>
+      <ul>
+        <li><strong>3♣</strong> : valeurs de manche et au moins une majeure quatrième — c'est le cas normal.</li>
+        <li><strong>3♦ et 3♥</strong> : transferts. Avec une majeure <em>cinquième</em>, on transfère (3♦ pour les Cœurs, 3♥ pour les Piques) ; le Puppet ne sert à rien puisque le fit sera trouvé de toute façon.</li>
+        <li><strong>3SA</strong> : aucune majeure quatrième, rien à chercher.</li>
+        <li><strong>Passe</strong> : moins de 4 H. En face de 20-21 H, la manche n'est pas là, et 3♣ serait forcing.</li>
+      </ul>
+      <p class="pied-page" style="color:#9a9382;margin-top:18px">Page 1 / 2</p>
+    </div>
+
+    <div class="page">
+      <p class="sous-impression">Page 2 / 2 — les suites, le chelem, les extensions</p>
+
+      <h2>Après 3♦ : nommer la majeure que l'on n'a pas</h2>
+      <p>C'est le mécanisme le plus déroutant de la convention, et le plus utile. Le répondant nomme <em>l'autre</em> majeure : avec quatre Piques il dit 3♥, avec quatre Cœurs il dit 3♠.</p>
+      <div class="duo">
+        <div class="encheres" aria-label="Séquence 2 Sans-Atout, 3 Trèfle, 3 Carreau, 3 Coeur, 4 Pique">
+          <div class="entete"><span>Ouvreur</span><span>Répondant</span></div>
+          <div class="ligne"><span>2SA</span><span>3<b class="n">♣</b></span></div>
+          <div class="ligne"><span>3<b class="r">♦</b></span><span>3<b class="r">♥</b></span></div>
+          <div class="ligne"><span>4<b class="n">♠</b></span><span></span></div>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <p style="margin-top:0">3♥ annonce quatre Piques. L'ouvreur, s'il a lui aussi quatre Piques, conclut à 4♠ et joue le contrat : la main forte reste cachée, l'entame vient dans sa direction. Sans quatre Piques, il dit 3SA.</p>
+        </div>
+      </div>
+      <p>Avec <strong>les deux majeures quatrièmes</strong>, le répondant dit <strong>4♦</strong> : à l'ouvreur de nommer la sienne au palier de 4.</p>
+
+      <h2>Après 3♥ ou 3♠ : le fit 5-3</h2>
+      <p>La majeure cinquième est sur la table. Le répondant conclut à 4 dans cette majeure avec trois cartes — c'est le fit que la convention est allée chercher — et dit 3SA avec deux cartes ou moins.</p>
+
+      <h2>Après 3SA</h2>
+      <p>Aucune majeure en face : le répondant passe, sauf s'il a de quoi viser le chelem.</p>
+
+      <h2>Le chelem</h2>
+      <p>Face à 20-21 H, il suffit de 15-16 H pour dépasser 35 points à deux. Le répondant dit alors <strong>4SA</strong>, quantitatif et non Blackwood : l'ouvreur passe avec 20 H, conclut à 6SA avec 21 H. On cherche d'abord le fit majeur par 3♣, on parle chelem ensuite — jamais l'inverse.</p>
+
+      <h2>Deux extensions</h2>
+      <p><strong>Après un fort 2♣ suivi de 2SA</strong> (2♣ – 2♦ – 2SA), la redemande décrit la même main forte et régulière : le 3♣ du répondant y est du Puppet, avec des réponses identiques.</p>
+      <p><strong>Après une ouverture de 1SA</strong>, certains jouent le Puppet à 3♣, puisque le 1SA de 15-17 H peut lui aussi contenir une majeure cinquième. C'est plus coûteux — le palier de 3 est atteint d'emblée, et l'on perd le 3♣ naturel. La série conserve le Stayman 2♣ ordinaire sur 1SA.</p>
+
+      <h2>À retenir</h2>
+      <ul>
+        <li>3♣ forcing de manche : d'abord la majeure cinquième, ensuite la quatrième.</li>
+        <li>3♦ = une quatrième au moins · 3♥/3♠ = cinq cartes · 3SA = rien en majeure.</li>
+        <li>Sur 3♦, on nomme la majeure que l'on n'a pas ; avec les deux, 4♦.</li>
+        <li>Avec une majeure cinquième, on transfère : le Puppet ne sert qu'aux mains à quatre cartes.</li>
+      </ul>
+      <p class="pied-page" style="color:#9a9382;margin-top:18px">Page 2 / 2</p>
+      <p class="no-print" style="font-family:-apple-system,sans-serif;font-size:13px;color:var(--ink-soft)">
+        Cette leçon s'imprime sur deux pages (Fichier → Imprimer).
+      </p>
+    </div>
+  `,
+
+  banque: [
+{id:"pup-01",role:"Répondant",seq:["2SA","?"],
+ main:{p:"R 9 7 4",c:"8 5 3",k:"A 6 2",t:"D 7 5"},h:9,
+ question:"Quatre Piques, 9 H, en face de 20-21 H. Que dites-vous ?",
+ rep:"3♣",options:["3♣","3SA","3♥","Passe"],
+ com:"Valeurs de manche et une majeure quatrième : <em>3♣</em>. La question est double — cinq Piques ou cinq Cœurs d'abord, quatre Piques ensuite. 3SA immédiat renoncerait aux deux."},
+
+{id:"pup-02",role:"Répondant",seq:["2SA","?"],
+ main:{p:"D 8 6 5",c:"R V 9 2",k:"7 4",t:"10 8 3"},h:6,
+ question:"Les deux majeures quatrièmes, 6 H. Que dites-vous ?",
+ rep:"3♣",options:["3♣","3SA","3♦","Passe"],
+ com:"<em>3♣</em>. Six points suffisent en face de 20-21 H, et avec 4-4 en majeures les chances de fit sont excellentes. Vous direz 4♦ sur 3♦ pour lui faire choisir sa majeure."},
+
+{id:"pup-03",role:"Répondant",seq:["2SA","?"],
+ main:{p:"A V 9 7 3",c:"8 4",k:"R 10 6",t:"9 5 2"},h:8,
+ question:"Cinq Piques, 8 H. Que dites-vous ?",
+ rep:"3♥",options:["3♥","3♣","3♠","4♠"],
+ com:"<em>3♥</em>, transfert Pique. Avec une majeure cinquième le Puppet est inutile : deux cartes en face suffisent à faire un fit, et le transfert laisse l'ouvreur déclarant."},
+
+{id:"pup-04",role:"Répondant",seq:["2SA","?"],
+ main:{p:"D 8 3",c:"9 6 4",k:"A V 10 7 5",t:"6 2"},h:7,
+ question:"Aucune majeure quatrième, 7 H. Que dites-vous ?",
+ rep:"3SA",options:["3SA","3♣","4♦","Passe"],
+ com:"<em>3SA</em>. Sans majeure quatrième, il n'y a rien à demander, et les cinq Carreaux ne valent pas la peine de dépasser 3SA face à une main régulière."},
+
+{id:"pup-05",role:"Ouvreur",seq:["2SA","3♣","?"],
+ main:{p:"A D 8 5",c:"R V 3",k:"A R 9",t:"D V 4"},h:20,
+ question:"Votre partenaire demande. Que répondez-vous ?",
+ rep:"3♦",options:["3♦","3♠","3SA","4♠"],
+ com:"<em>3♦</em> : pas de majeure cinquième, mais une quatrième. L'enchère n'a rien à voir avec les Carreaux, elle rend la parole au répondant, qui nommera la majeure qu'il n'a pas."},
+
+{id:"pup-06",role:"Ouvreur",seq:["2SA","3♣","?"],
+ main:{p:"R 8",c:"A D 10 7 3",k:"A R 6",t:"A 9 4"},h:20,
+ question:"Que répondez-vous à la demande ?",
+ rep:"3♥",options:["3♥","3♦","3SA","4♥"],
+ com:"<em>3♥</em> : cinq Cœurs. C'est exactement ce que la convention est allée chercher — avec trois Cœurs en face, la manche à Cœur vaudra mieux que 3SA."},
+
+{id:"pup-07",role:"Ouvreur",seq:["2SA","3♣","?"],
+ main:{p:"A D 9",c:"R V 6",k:"A D V 4",t:"R 10 3"},h:20,
+ question:"Que répondez-vous à la demande ?",
+ rep:"3SA",options:["3SA","3♦","3♥","4SA"],
+ com:"Ni cinq ni quatre cartes en majeure : <em>3SA</em>, et la question est close. Le répondant passera, sauf s'il a de quoi viser le chelem."},
+
+{id:"pup-08",role:"Ouvreur",seq:["2SA","3♣","?"],
+ main:{p:"A R 10 8 5",c:"R 7",k:"A D 4",t:"R V 6"},h:20,
+ question:"Que répondez-vous à la demande ?",
+ rep:"3♠",options:["3♠","3♦","3SA","4♠"],
+ com:"<em>3♠</em> : cinq Piques. Cette main est la raison d'être du Puppet — sans lui, le fit 5-3 à Pique resterait introuvable après une ouverture de 2SA."},
+
+{id:"pup-09",role:"Répondant",seq:["2SA","3♣","3♦","?"],
+ main:{p:"R 9 7 4",c:"8 5 3",k:"A 6 2",t:"D 7 5"},h:9,
+ question:"L'ouvreur a une majeure quatrième. Que dites-vous ?",
+ rep:"3♥",options:["3♥","3♠","3SA","4♠"],
+ com:"<em>3♥</em> annonce quatre <em>Piques</em> : on nomme la majeure que l'on n'a pas. Si l'ouvreur a lui aussi quatre Piques, il dira 4♠ et jouera le contrat, sa main forte cachée."},
+
+{id:"pup-10",role:"Ouvreur",seq:["2SA","3♣","3♦","3♥","?"],
+ main:{p:"A D 8 5",c:"R V 3",k:"A R 9",t:"D V 4"},h:20,
+ question:"3♥ annonce quatre Piques. Que dites-vous ?",
+ rep:"4♠",options:["4♠","3♠","3SA","4♥"],
+ com:"Fit 4-4 trouvé et manche acquise : <em>4♠</em>. C'est vous qui jouez, l'entame vient dans votre main forte — tout le bénéfice du détour par 3♥."},
+
+{id:"pup-11",role:"Ouvreur",seq:["2SA","3♣","3♦","3♥","?"],
+ main:{p:"D 5",c:"A D 8 3",k:"A R V 6",t:"R D 4"},h:21,
+ question:"3♥ annonce quatre Piques. Que dites-vous ?",
+ rep:"3SA",options:["3SA","4♥","3♠","4♠"],
+ com:"Votre majeure quatrième était à Cœur, pas à Pique : pas de fit, <em>3SA</em>. Surtout pas 4♥ — le répondant vient de nier quatre Cœurs en nommant 3♥."},
+
+{id:"pup-12",role:"Répondant",seq:["2SA","3♣","3♦","?"],
+ main:{p:"D 8 6 5",c:"R V 9 2",k:"7 4",t:"10 8 3"},h:6,
+ question:"Vous avez les deux majeures quatrièmes. Que dites-vous ?",
+ rep:"4♦",options:["4♦","3♥","3♠","3SA"],
+ com:"<em>4♦</em> : le mécanisme « la majeure que je n'ai pas » ne fonctionne plus quand on les a toutes les deux. 4♦ demande à l'ouvreur de nommer la sienne au palier de 4."},
+
+{id:"pup-13",role:"Ouvreur",seq:["2SA","3♣","3♦","4♦","?"],
+ main:{p:"A D 8 5",c:"R V 3",k:"A R 9",t:"D V 4"},h:20,
+ question:"Le répondant a les deux majeures quatrièmes. Que dites-vous ?",
+ rep:"4♠",options:["4♠","4♥","4SA","5♦"],
+ com:"<em>4♠</em>, votre majeure quatrième. Le fit est garanti puisque le répondant les a toutes les deux ; 4♦ ne demandait rien d'autre que ce choix."},
+
+{id:"pup-14",role:"Répondant",seq:["2SA","3♣","3♥","?"],
+ main:{p:"D 10 6 4",c:"R 8 4",k:"V 9 7",t:"A 3 2"},h:10,
+ question:"L'ouvreur montre cinq Cœurs. Que dites-vous ?",
+ rep:"4♥",options:["4♥","3SA","3♠","4♠"],
+ com:"<em>4♥</em>. Le fit 5-3 est exactement ce que vous cherchiez : huit atouts et deux mains sans singleton, la manche à Cœur se joue mieux que 3SA."},
+
+{id:"pup-15",role:"Répondant",seq:["2SA","3♣","3♠","?"],
+ main:{p:"8 5",c:"A D 9 6",k:"R 10 7 4",t:"V 6 3"},h:10,
+ question:"L'ouvreur montre cinq Piques. Que dites-vous ?",
+ rep:"3SA",options:["3SA","4♠","4♥","4SA"],
+ com:"Deux Piques seulement, et vos quatre Cœurs ne trouveront personne — l'ouvreur aurait dit 3♥ avec cinq Cœurs, et il dira sa quatrième plus tard s'il en a une. <em>3SA</em>."},
+
+{id:"pup-16",role:"Répondant",seq:["2SA","3♣","3SA","?"],
+ main:{p:"R V 8 3",c:"9 6",k:"A 10 7 4",t:"D 8 2"},h:10,
+ question:"L'ouvreur n'a aucune majeure. Que dites-vous ?",
+ rep:"Passe",options:["Passe","4♦","4SA","4♠"],
+ com:"<em>Passe</em>. La convention a fait son travail : elle a montré qu'il n'y avait pas de fit majeur. 30-31 points à deux, sans fit, c'est 3SA et rien d'autre."},
+
+{id:"pup-17",role:"Répondant",seq:["2SA","?"],
+ main:{p:"A V 9 6",c:"R 4",k:"A D 8 5",t:"D 9 3"},h:16,
+ question:"16 H en face de 20-21 H. Que dites-vous ?",
+ rep:"3♣",options:["3♣","4SA","6SA","3SA"],
+ com:"<em>3♣</em> d'abord. Le chelem est probable, mais un fit 4-4 à Pique changerait tout : on cherche le fit, on parle chelem ensuite. 4SA immédiat sauterait l'étape utile."},
+
+{id:"pup-18",role:"Répondant",seq:["2SA","?"],
+ main:{p:"D 8 6 5",c:"9 7 3",k:"10 8 4",t:"V 7 2"},h:3,
+ question:"Quatre Piques, mais 3 H seulement. Que dites-vous ?",
+ rep:"Passe",options:["Passe","3♣","3SA","3♥"],
+ com:"<em>Passe</em>. 3♣ est forcing de manche : 23-24 points à deux ne la produiront pas. La majeure quatrième ne suffit pas, il faut aussi les valeurs."},
+
+{id:"pup-19",role:"Répondant",seq:["2SA","?"],
+ main:{p:"R 10 8 6 3",c:"A V 9 5",k:"7 2",t:"8 4"},h:8,
+ question:"Cinq Piques et quatre Cœurs. Que dites-vous ?",
+ rep:"3♥",options:["3♥","3♣","3♠","4♠"],
+ com:"<em>3♥</em>, transfert Pique : on décrit d'abord la couleur la plus longue. Les Cœurs se diront ensuite si le chelem se profile ; avec ces 8 H, la manche suffira.",
+ alt:"3♣ se joue aussi avec les mains 5-4, mais la suite devient ambiguë : le répondant ne peut plus nommer sa cinquième au palier de 3 sans écraser le mécanisme de la majeure que l'on n'a pas."},
+
+{id:"pup-20",role:"Ouvreur",seq:["2SA","3♥","?"],
+ main:{p:"R D 7",c:"A V 5",k:"A R 9 4",t:"D V 3"},h:20,
+ question:"3♥ est un transfert Pique. Que dites-vous ?",
+ rep:"3♠",options:["3♠","4♠","3SA","4♥"],
+ com:"<em>3♠</em>, l'acceptation simple du transfert. Le répondant peut n'avoir rien du tout ; c'est à lui de choisir entre passer, 3SA et 4♠."},
+
+{id:"pup-21",role:"Répondant",seq:["2SA","3♣","3♦","?"],
+ main:{p:"9 6 3",c:"A D 8 5",k:"R V 7",t:"10 4 2"},h:10,
+ question:"L'ouvreur a une majeure quatrième. Que dites-vous ?",
+ rep:"3♠",options:["3♠","3♥","3SA","4♥"],
+ com:"<em>3♠</em> annonce quatre <em>Cœurs</em>. Le réflexe est contre-intuitif : on nomme toujours la majeure que l'on n'a pas, pour que la main forte reste déclarante."},
+
+{id:"pup-22",role:"Ouvreur",seq:["2SA","3♣","3♦","3♠","?"],
+ main:{p:"A D 6",c:"R V 9 3",k:"A R 5",t:"D V 4"},h:20,
+ question:"3♠ annonce quatre Cœurs. Que dites-vous ?",
+ rep:"4♥",options:["4♥","3SA","4♠","4♣"],
+ com:"<em>4♥</em> : fit 4-4 à Cœur. Vos trois Piques à l'As-Dame ne changent rien — le répondant vient de nier quatre Piques."},
+
+{id:"pup-23",role:"Répondant",seq:["2SA","?"],
+ main:{p:"8 4",c:"R V 10 9 7 3",k:"A 6 2",t:"9 5"},h:8,
+ question:"Six Cœurs, 8 H. Que dites-vous ?",
+ rep:"3♦",options:["3♦","3♣","4♥","3♥"],
+ com:"<em>3♦</em>, transfert Cœur, puis 4♥. Le Puppet n'a aucun intérêt ici : avec six cartes, le fit est acquis d'avance et seule compte la place du déclarant."},
+
+{id:"pup-24",role:"Répondant",seq:["2SA","3♣","3SA","?"],
+ main:{p:"A V 9 6",c:"R 4",k:"A D 8 5",t:"D 9 3"},h:16,
+ question:"Aucune majeure en face, mais vous avez 16 H. Que dites-vous ?",
+ rep:"4SA",options:["4SA","Passe","6SA","5SA"],
+ com:"<em>4SA</em>, quantitatif et non Blackwood : 36 à 37 points à deux, le chelem dépend du maximum. L'ouvreur passe avec 20 H, conclut à 6SA avec 21 H."},
+
+{id:"pup-25",role:"Ouvreur",seq:["2SA","3♣","3SA","4SA","?"],
+ main:{p:"A D 9",c:"R V 6",k:"A D V 4",t:"R V 3"},h:21,
+ question:"Le répondant propose le chelem. Que dites-vous ?",
+ rep:"6SA",options:["6SA","Passe","5SA","7SA"],
+ com:"<em>6SA</em>. Vous êtes au maximum de l'ouverture, avec quatre couleurs tenues et des honneurs groupés : 37 points à deux, le petit chelem est à jouer."}
+  ]
+};
